@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mahasiswa;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    public function dashboard()
+    public function index()
     {
-        return view('admin.dashboard.index');
+        $mahasiswaCount = Mahasiswa::count();
+        return view('admin.dashboard.index', compact('mahasiswaCount'));
     }
 }

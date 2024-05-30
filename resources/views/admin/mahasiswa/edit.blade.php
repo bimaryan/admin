@@ -4,7 +4,7 @@
         <div class="rounded-lg mt-14">
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
                 <h2 class="text-xl font-bold text-gray-900 dark:text-white">Edit Data Mahasiswa</h2>
-                <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700">
+                <hr class="h-px my-3 bg-gray-200 border-0 dark:bg-gray-700">
                 <form action="{{ route('mahasiswa.update', $mahasiswa->id) }}" class="space-y-4 md:space-y-6" method="POST">
                     @csrf
                     @method('PUT')

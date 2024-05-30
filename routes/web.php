@@ -22,7 +22,7 @@ Route::post('/auth/login-proses', [LoginController::class, 'proses'])->name('log
 Route::get('/auth/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/admin/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+    Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/admin/dashboard/mahasiswa', [MahasiswaController::class, 'index'])->name('mahasiswa.index');
     Route::get('/admin/dashboard/mahasiswa/create', [MahasiswaController::class, 'create'])->name('mahasiswa.create');
     Route::post('/admin/dashboard/mahasiswa', [MahasiswaController::class, 'store'])->name('mahasiswa.store');
