@@ -1,5 +1,9 @@
 <h1 align="center">TUGAS KEAMANAN PERANGKAT LUNAK</h1>
 
+<div align="center">
+    <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Cat Sticker" width="300"/>
+</div>
+
 ## Anggota Kelompok
 - Bima Ryan Alfarizi (2205036)
 - Aditya Wisnu Setya Pamungkas (2205031)
