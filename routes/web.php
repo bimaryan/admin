@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MahasiswaController;
+use Illuminate\Auth\Events\Login;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,4 +32,4 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/admin/dashboard/mahasiswa/{mahasiswa}', [MahasiswaController::class, 'destroy'])->name('mahasiswa.destroy');
 });
 
-Route::get('/', [AdminController::class, 'index'])->name('index');
+Route::get('/', [LoginController::class, 'index'])->name('login');
