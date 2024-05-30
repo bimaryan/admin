@@ -15,19 +15,28 @@
                 </button>
                 <a href="" class="flex ms-2 md:me-24">
                     {{-- <img src="" class="h-8 me-3" alt="Extroverse" /> --}}
-                    <span
-                        class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Admin Kita</span>
+                    <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Admin
+                        Kita</span>
                 </a>
             </div>
             <div class="flex items-center">
                 <div class="flex items-center ms-3">
-                    <div>
+                    <div class="flex gap-3">
+                        <button onclick="toggleDarkMode()"
+                            class="px-2 py-1 bg-gray-900 rounded-full text-white dark:text-gray-900 dark:bg-white">
+                            <span id="dark-mode-icon">
+                                @if (isset($isDarkMode) && $isDarkMode)
+                                    <i class="bi bi-sun"></i>
+                                @else
+                                    <i class="bi bi-moon-stars"></i>
+                                @endif
+                            </span>
+                        </button>
                         <button type="button"
                             class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                             aria-expanded="false" data-dropdown-toggle="dropdown-user">
                             <span class="sr-only">Open user menu</span>
-                            <img src="" alt="foto user"
-                                class="w-8 h-8 rounded-full" />
+                            <img src="" alt="foto user" class="w-8 h-8 rounded-full" />
                         </button>
                     </div>
                     <div class="max-w-full z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
@@ -43,7 +52,7 @@
                                 role="menuitem">Registration Distributor</a>
                         </li> --}}
                             <li>
-                                <a href="{{route('logout')}}" method='POST'
+                                <a href="{{ route('logout') }}" method='POST'
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                                     role="menuitem">Log out</a>
                             </li>
@@ -63,14 +72,14 @@
             <li>
                 <a style="cursor:pointer;"
                     class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-                    href="">
+                    href="{{route('dashboard')}}">
                     <span class="ms-3"><i class="bi bi-house-door"></i> Dashboard</span>
                 </a>
             </li>
             <li>
                 <a style="cursor:pointer;"
                     class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-                    href="">
+                    href="{{route('mahasiswa.index')}}">
                     <span class="flex-1 ms-3 whitespace-nowrap"><i class="bi bi-people"></i> Data Mahasiswa</span>
                 </a>
             </li>
