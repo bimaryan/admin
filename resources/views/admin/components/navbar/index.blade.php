@@ -44,7 +44,7 @@
                         <ul class="py-1" role="none">
                             <li>
                                 <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer"
-                                    role="menuitem" href="{{route('profil')}}">Account</a>
+                                    role="menuitem" href="{{ route('profil') }}">Account</a>
                             </li>
                             {{-- <li>
                             <a href=""
@@ -72,17 +72,22 @@
             <li>
                 <a style="cursor:pointer;"
                     class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-                    href="{{route('dashboard')}}">
+                    href="{{ route('dashboard') }}">
                     <span class="ms-3"><i class="bi bi-house-door"></i> Dashboard</span>
                 </a>
             </li>
             <li>
                 <a style="cursor:pointer;"
                     class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-                    href="{{route('mahasiswa.index')}}">
+                    href="{{ route('mahasiswa.index') }}">
                     <span class="flex-1 ms-3 whitespace-nowrap"><i class="bi bi-people"></i> Data Mahasiswa</span>
                 </a>
             </li>
         </ul>
+        <footer class="fixed bottom-0 left-0 z-50 bg-gray-900 text-white py-2 px-4 text-center">
+            <p class="text-sm">Visit our GitHub repository: <a href="https://github.com/bimaryan/admin"
+                    class="underline" target="_blank" rel="noopener noreferrer">https://github.com/bimaryan/admin</a>
+            </p>
+        </footer>
     </div>
 </aside>
