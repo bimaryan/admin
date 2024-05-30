@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminLoginController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AdminController;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +17,10 @@ use App\Http\Controllers\AdminLoginController;
 |
 */
 
-Route::get('/auth/login', function(){
-    return view('admin.auth.login.index');
-});
+Route::get('/auth/login',[LoginController::class, 'index'])->name('login');
+Route::post('/auth/login-proses',[LoginController::class, 'proses'])->name('login-proses');
+Route::get('/auth/logout',[LoginController::class, 'logout'])->name('logout');
 
-Route::get('/', function(){
-    return view('index');
-});
+
+Route::get('/admin/dashboard',[DashboardController::class, 'dashboard'])->name('dashboard');
+Route::get('/',[AdminController::class, 'index'])->name('index');

@@ -1,4 +1,4 @@
 @extends('index')
 @section('content')
-DASHBOARD
+    @include('admin.components.navbar.index')
 @endsection

@@ -14,10 +14,6 @@ class Kernel extends HttpKernel
      * @var array<int, class-string|string>
      */
 
-    protected $routeMiddleware = [
-        'admin.auth' => \App\Http\Middleware\AdminAuthenticate::class,
-    ];
-
     protected $middleware = [
         \App\Http\Middleware\TrustProxies::class,
         \Illuminate\Http\Middleware\HandleCors::class,
@@ -40,7 +36,6 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            \App\Http\Middleware\Admin::class, // Tambahkan middleware admin ke dalam kelompok 'web'
         ],
 
         'api' => [

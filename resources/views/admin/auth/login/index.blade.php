@@ -1,10 +1,9 @@
 @extends('index')
 @section('content')
-<div class="container p-3 mx-auto">
+    <div class="container p-3 mx-auto">
         <section>
             <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen md:h-screen lg:py-0">
-                <a href=""
-                    class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+                <a href="" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
                     Admin Kita
                 </a>
                 <div
@@ -13,7 +12,7 @@
                         <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                             Sign in to your account
                         </h1>
-                        <form class="space-y-4 md:space-y-6" action="" method="POST">
+                        <form class="space-y-4 md:space-y-6" action="{{ route('login-proses') }}" method="POST">
                             @csrf
                             <div>
                                 <label for="phone"
@@ -21,7 +20,7 @@
                                     Phone</label>
                                 <input type="text" name="phone" id="phone"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    placeholder="phone...">
+                                    placeholder="08123456789">
                                 @error('phone')
                                     <small class="text-red-500">{{ $message }}</small>
                                 @enderror
@@ -44,4 +43,22 @@
             </div>
         </section>
     </div>
+
+    @if ($messages = Session::get('failed'))
+        <script>
+            Swal.fire({
+                icon: 'error',
+                text: '{{$messages}}'
+            });
+        </script>
+    @endif
+
+    @if ($messages = Session::get('success'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                text: '{{$messages}}'
+            });
+        </script>
+    @endif
 @endsection
