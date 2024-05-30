@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Auth\Events\Login;
 
 /*
@@ -24,6 +25,7 @@ Route::get('/auth/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/admin/dashboard/profil', [ProfileController::class, 'index'])->name('profil');
     Route::get('/admin/dashboard/mahasiswa', [MahasiswaController::class, 'index'])->name('mahasiswa.index');
     Route::get('/admin/dashboard/mahasiswa/create', [MahasiswaController::class, 'create'])->name('mahasiswa.create');
     Route::post('/admin/dashboard/mahasiswa', [MahasiswaController::class, 'store'])->name('mahasiswa.store');

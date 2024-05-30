@@ -4,9 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('throttle:10,1')->only('proses');
+    }
+
     public function index()
     {
         return view('admin.auth.login.index');
@@ -14,26 +20,21 @@ class LoginController extends Controller
 
     public function proses(Request $request)
     {
+        // Validate the input
         $request->validate([
-            'phone' => 'required',
-            'password' => 'required',
+            'phone' => 'required|string',
+            'password' => 'required|string',
         ]);
 
-        $data = [
-            'phone' => $request->phone,
-            'password' => $request->password,
-        ];
-
-        if (Auth::attempt($data)) {
+        if (Auth::attempt($request->only('phone', 'password'))) {
             return redirect()->route('dashboard');
-        } else {
-            return redirect()->route('login')->with('failed','Nomer Telepon dan Password Salah');
         }
+        return redirect()->route('login')->with('failed', 'Nomer Telepon dan Password Salah');
     }
 
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('login')->with('success','Kamu berhasil logout');
+        return redirect()->route('login')->with('success', 'Kamu berhasil logout');
     }
 }
