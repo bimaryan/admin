@@ -4,7 +4,7 @@
 - Bima Ryan Alfarizi (2205036)
 - Aditya Wisnu Setya Pamungkas (2205031)
 
-## CARA INSTALL NYA NIH
+## Cara Install
 - pertama git clone dulu <code>https://github.com/bimaryan/admin.git</code>
 - kedua setelah git clone lalu <code>composer install</code>
 - ketiga ketik di terminal <code>php artisan key:generate</code>
