@@ -57,8 +57,14 @@ class TaskController extends Controller
 
     public function edit(Task $task)
     {
-        dd($task->getAttributes());
         return view('admin.tugas.edit', compact('task'));
+    }
+
+    public function editSubmission($id)
+    {
+        $task = Task::find($id);
+        $submission = TaskSubmission::where('task_id', $id)->where('user_id', auth()->id())->first();
+        return view('mahasiswa.tugas.edit', compact('task', 'submission'));
     }
 
     public function update(Request $request, Task $task)
@@ -96,7 +102,7 @@ class TaskController extends Controller
 
         if ($task->submission_type == 'file' && $request->hasFile('file')) {
             $file = $request->file('file');
-            $path = $file->store('public/file');
+            $path = $file->store('public/file'); // Simpan ke direktori public/file
             $submissionData['file_path'] = $path;
         } elseif ($task->submission_type == 'online_text') {
             $submissionData['online_text'] = $request->input('online_text');

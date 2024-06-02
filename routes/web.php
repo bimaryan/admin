@@ -53,6 +53,7 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
     Route::get('/mahasiswa/dashboard/tugas/', [TaskController::class, 'indexMahasiswa'])->name('mahasiswa.tugas.index');
     Route::get('/mahasiswa/tugas/{task}', [TaskController::class, 'showMahasiswa'])->name('mahasiswa.tugas.show');
     Route::post('/mahasiswa/dashboard/tugas/{task}/submit', [TaskController::class, 'submit'])->name('mahasiswa.tugas.submit');
+    Route::get('mahasiswa/tugas/{id}/edit', [TaskController::class, 'editSubmission'])->name('mahasiswa.tugas.edit');
     Route::get('/mahasiswa/dashboard/profil', [ProfileController::class, 'mahasiswa'])->name('mahasiswa.profil');
     Route::put('/mahasiswa/dashboard/profil/update-nama', [ProfileController::class, 'mahasiswa_update_nama'])->name('mahasiswa.profil.update_nama');
     Route::put('/mahasiswa/dashboard/profil/update-phone', [ProfileController::class, 'mahasiswa_update_phone'])->name('mahasiswa.profil.update_phone');

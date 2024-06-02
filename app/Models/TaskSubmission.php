@@ -10,9 +10,10 @@ class TaskSubmission extends Model
     use HasFactory;
 
     protected $fillable = [
-        'task_id',
         'user_id',
-        'submission',
+        'task_id',
+        'file_path',
+        'online_text',
     ];
 
     /**
