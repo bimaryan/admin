@@ -23,6 +23,16 @@
                     </ol>
                 </nav>
                 <hr class="h-px my-3 bg-gray-200 border-0 dark:bg-gray-700">
+
+                <!-- Version Information -->
+                <div class="mt-4">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-white">Application Version</h3>
+                    <div class="mt-2">
+                        <p class="text-sm text-gray-600 dark:text-gray-400">
+                            <strong>Version:</strong> {{ config('app.version') }}
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

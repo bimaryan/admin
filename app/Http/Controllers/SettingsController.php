@@ -8,6 +8,7 @@ class SettingsController extends Controller
 {
     public function index()
     {
+        $version = config('app.version');
         return view('admin.settings.index');
     }
 }
