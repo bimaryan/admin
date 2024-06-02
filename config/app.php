@@ -84,7 +84,10 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locales' => [
+        'en' => 'English',
+        'id' => 'Indonesian',
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -164,6 +167,7 @@ return [
         /*
          * Application Service Providers...
          */
+        Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
@@ -183,6 +187,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
+        'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 

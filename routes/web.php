@@ -9,6 +9,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controller\DashboardMahasiswaController;
 use App\Http\Controllers\TaskController;
 use Illuminate\Auth\Events\Login;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Http\Request;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -59,5 +61,11 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
     Route::put('/mahasiswa/dashboard/profil/update-phone', [ProfileController::class, 'mahasiswa_update_phone'])->name('mahasiswa.profil.update_phone');
     Route::get('/mahasiswa/dashboard/settings', [SettingsController::class, 'mahasiswa'])->name('mahasiswa.settings');
 });
+
+Route::post('language/change', function (Request $request) {
+    $locale = $request->input('locale');
+    Session::put('locale', $locale);
+    return redirect()->back();
+})->name('language.change');
 
 Route::get('/', [LoginController::class, 'index'])->name('login');
