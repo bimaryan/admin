@@ -38,7 +38,7 @@ class MahasiswaController extends Controller
 
         Mahasiswa::create($request->all());
 
-        return redirect()->route('mahasiswa.index')->with('success', 'Mahasiswa created successfully.');
+        return redirect()->route('admin.mahasiswa.index')->with('success', 'Mahasiswa created successfully.');
     }
 
     public function edit(Mahasiswa $mahasiswa)
@@ -59,13 +59,13 @@ class MahasiswaController extends Controller
 
         $mahasiswa->update($request->all());
 
-        return redirect()->route('mahasiswa.index')->with('success', 'Mahasiswa updated successfully.');
+        return redirect()->route('admin.mahasiswa.index')->with('success', 'Mahasiswa updated successfully.');
     }
 
     public function destroy(Mahasiswa $mahasiswa)
     {
         $mahasiswa->delete();
 
-        return redirect()->route('mahasiswa.index')->with('success', 'Mahasiswa deleted successfully.');
+        return redirect()->route('admin.mahasiswa.index')->with('success', 'Mahasiswa deleted successfully.');
     }
 }

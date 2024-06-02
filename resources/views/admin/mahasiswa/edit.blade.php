@@ -16,7 +16,7 @@
                         <li>
                             <div class="flex items-center">
                                 <i class="bi bi-chevron-right text-gray-400"></i>
-                                <a href="{{ route('mahasiswa.index') }}"
+                                <a href="{{ route('admin.mahasiswa.index') }}"
                                     class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white">Data
                                     Mahasiswa</a>
                             </div>
@@ -31,7 +31,7 @@
                     </ol>
                 </nav>
                 <hr class="h-px my-3 bg-gray-200 border-0 dark:bg-gray-700">
-                <form action="{{ route('mahasiswa.update', $mahasiswa->id) }}" class="space-y-4 md:space-y-6"
+                <form action="{{ route('admin.mahasiswa.update', $mahasiswa->id) }}" class="space-y-4 md:space-y-6"
                     method="POST">
                     @csrf
                     @method('PUT')

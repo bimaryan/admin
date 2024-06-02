@@ -19,6 +19,7 @@ class User extends Authenticatable
         'nama',
         'phone',
         'password',
+        'role',
     ];
 
     /**
@@ -30,4 +31,23 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+
+    /**
+     * Determine if the user has the given role.
+     *
+     * @param  string  $role
+     * @return bool
+     */
+    public function hasRole($role)
+    {
+        return $this->role === $role;
+    }
+
+    /**
+     * Get the task submissions for the user.
+     */
+    public function submissions()
+    {
+        return $this->hasMany(TaskSubmission::class);
+    }
 }

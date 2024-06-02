@@ -27,8 +27,15 @@ class LoginController extends Controller
         ]);
 
         if (Auth::attempt($request->only('phone', 'password'))) {
-            return redirect()->route('dashboard');
+            $user = Auth::user();
+
+            if ($user->role === 'admin') {
+                return redirect()->route('dashboard');
+            } elseif ($user->role === 'mahasiswa') {
+                return redirect()->route('mahasiswa.dashboard');
+            }
         }
+        
         return redirect()->route('login')->with('failed', 'Nomer Telepon dan Password Salah');
     }
 

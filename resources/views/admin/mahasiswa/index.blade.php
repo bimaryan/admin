@@ -14,7 +14,7 @@
                 <div class="flex justify-between items-center">
                     <h2 class="text-xl font-bold text-gray-900 dark:text-white">Mahasiswa</h2>
                     <a class="px-2 py-1 bg-blue-700 dark:bg-blue-600 rounded hover:bg-blue-800 dark:hover:bg-blue-700 text-white dark:text-black"
-                        href="{{ route('mahasiswa.create') }}"><i class="bi bi-person-add"></i></a>
+                        href="{{ route('admin.mahasiswa.create') }}"><i class="bi bi-person-add"></i></a>
                 </div>
                 <nav class="flex mb-4" aria-label="Breadcrumb">
                     <ol class="inline-flex items-center space-x-1 md:space-x-3">
@@ -28,7 +28,7 @@
                         <li>
                             <div class="flex items-center">
                                 <i class="bi bi-chevron-right text-gray-400"></i>
-                                <a href="{{ route('mahasiswa.index') }}"
+                                <a href="{{ route('admin.mahasiswa.index') }}"
                                     class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white">Data
                                     Mahasiswa</a>
                             </div>
@@ -36,7 +36,7 @@
                     </ol>
                 </nav>
                 <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700">
-                <form class="max-w-md mx-auto mb-2" action="{{ route('mahasiswa.index') }}" method="GET">
+                <form class="max-w-md mx-auto mb-2" action="{{ route('admin.mahasiswa.index') }}" method="GET">
                     <label for="search"
                         class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                     <div class="relative">
@@ -71,14 +71,14 @@
                                 <td class="px-6 py-4">{{ $mhs->prodi }}</td>
                                 <td class="px-6 py-4">
                                     <div class="flex items-center gap-3">
-                                        <a href="{{ route('mahasiswa.edit', $mhs->id) }}"
+                                        <a href="{{ route('admin.mahasiswa.edit', $mhs->id) }}"
                                             class="bg-yellow-400 dark:bg-yellow-600 text-white px-2 py-1 rounded"><i
                                                 class="bi bi-pencil-square"></i></a>
                                         <button type="button" data-modal-target="modal-{{ $mhs->id }}"
                                             data-modal-toggle="modal-{{ $mhs->id }}"
                                             class="bg-purple-500 dark:bg-purple-600 text-white px-2 py-1 rounded"><i
                                                 class="bi bi-eye"></i></button>
-                                        <form action="{{ route('mahasiswa.destroy', $mhs->id) }}" method="POST"
+                                        <form action="{{ route('admin.mahasiswa.destroy', $mhs->id) }}" method="POST"
                                             class="delete-form" style="display:inline-block;">
                                             @csrf
                                             @method('DELETE')

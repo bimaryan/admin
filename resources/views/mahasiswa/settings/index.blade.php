@@ -7,7 +7,7 @@
                 <nav class="flex mb-4" aria-label="Breadcrumb">
                     <ol class="inline-flex items-center space-x-1 md:space-x-3">
                         <li class="inline-flex items-center">
-                            <a href="{{ route('dashboard') }}"
+                            <a href="{{ route('mahasiswa.dashboard') }}"
                                 class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
                                 <i class="bi bi-house-door me-2"></i>
                                 Dashboard
@@ -39,8 +39,9 @@
                     <h3 class="text-lg font-medium text-gray-900 dark:text-white">Update Features</h3>
                     <div class="mt-2">
                         <ul class="list-disc text-sm text-gray-600 dark:text-gray-400 pl-5">
-                            <li>Bisa Memperbarui profil admin</li>
-                            <li>Aplikasi versi {{ config('app.version') }}</li>
+                            <li>Menambahkan role [Mahasiswa dan Admin]</li>
+                            <li>Menambahkan CRUD tugas Mahasiswa dari Admin</li>
+                            <li>Mahasiswa bisa mengupload Tugas dari dashboard Mahasiswa</li>
                         </ul>
                     </div>
                 </div>

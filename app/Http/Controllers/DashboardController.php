@@ -12,4 +12,9 @@ class DashboardController extends Controller
         $mahasiswaCount = Mahasiswa::count();
         return view('admin.dashboard.index', compact('mahasiswaCount'));
     }
+
+    public function mahasiswa()
+    {
+        return view('mahasiswa.dashboard.index');
+    }
 }

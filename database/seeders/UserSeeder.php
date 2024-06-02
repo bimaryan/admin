@@ -19,12 +19,14 @@ class UserSeeder extends Seeder
             'nama' => 'Bima',
             'phone' => '1234567890',
             'password' => Hash::make('password123'),
+            'role' => 'admin',
         ]);
 
         User::create([
             'nama' => 'Wisnu',
             'phone' => '0987654321',
             'password' => Hash::make('password123'),
+            'role' => 'mahasiswa',
         ]);
     }
 }

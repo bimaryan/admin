@@ -11,4 +11,10 @@ class SettingsController extends Controller
         $version = config('app.version');
         return view('admin.settings.index');
     }
+
+    public function mahasiswa()
+    {
+        $version = config('app.version');
+        return view('mahasiswa.settings.index');
+    }
 }
