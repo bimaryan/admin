@@ -33,6 +33,17 @@
                         </p>
                     </div>
                 </div>
+
+                <!-- Feature Update Information -->
+                <div class="mt-4">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-white">Update Features</h3>
+                    <div class="mt-2">
+                        <ul class="list-disc text-sm text-gray-600 dark:text-gray-400 pl-5">
+                            <li>Bisa Memperbarui profil admin</li>
+                            <li>Aplikasi versi 1.0.3</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

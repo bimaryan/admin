@@ -21,10 +21,11 @@ class ProfileController extends Controller
         ]);
 
         $user = Auth::user();
+        $oldNama = $user->nama;
         $user->nama = $request->nama;
         $user->save();
 
-        return redirect()->route('profil')->with('success', 'Profile name updated successfully');
+        return redirect()->route('profil')->with('success', "Username {$oldNama} updated successfully");
     }
 
     public function update_phone(Request $request)
@@ -34,9 +35,10 @@ class ProfileController extends Controller
         ]);
 
         $user = Auth::user();
+        $oldPhone = $user->phone;
         $user->phone = $request->phone;
         $user->save();
 
-        return redirect()->route('profil')->with('success', 'Profile phone updated successfully');
+        return redirect()->route('profil')->with('success', "Number Phone {$oldPhone} updated successfully");
     }
 }
