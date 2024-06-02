@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Auth\Events\Login;
@@ -23,9 +23,13 @@ Route::get('/auth/login', [LoginController::class, 'index'])->name('login');
 Route::post('/auth/login-proses', [LoginController::class, 'proses'])->name('login-proses');
 Route::get('/auth/logout', [LoginController::class, 'logout'])->name('logout');
 
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/admin/dashboard/profil', [ProfileController::class, 'index'])->name('profil');
+    Route::put('/admin/dashboard/profil/update-nama', [ProfileController::class, 'update_nama'])->name('profil.update_nama');
+    Route::put('/admin/dashboard/profil/update-phone', [ProfileController::class, 'update_phone'])->name('profil.update_phone');
+    Route::get('/admin/dashboard/settings', [SettingsController::class, 'index'])->name('settings');
     Route::get('/admin/dashboard/mahasiswa', [MahasiswaController::class, 'index'])->name('mahasiswa.index');
     Route::get('/admin/dashboard/mahasiswa/create', [MahasiswaController::class, 'create'])->name('mahasiswa.create');
     Route::post('/admin/dashboard/mahasiswa', [MahasiswaController::class, 'store'])->name('mahasiswa.store');

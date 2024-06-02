@@ -15,8 +15,7 @@
                 </button>
                 <a href="" class="flex ms-2 md:me-24">
                     {{-- <img src="" class="h-8 me-3" alt="Extroverse" /> --}}
-                    <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Admin
-                        Kita</span>
+                    <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Admin Sungut Lele</span>
                 </a>
             </div>
             <div class="flex items-center">
@@ -44,17 +43,16 @@
                         <ul class="py-1" role="none">
                             <li>
                                 <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer"
-                                    role="menuitem" href="{{ route('profil') }}">Account</a>
+                                    role="menuitem" href="{{ route('profil') }}"><i class="bi bi-person"></i> Account</a>
                             </li>
-                            {{-- <li>
-                            <a href=""
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
-                                role="menuitem">Registration Distributor</a>
-                        </li> --}}
+                            <li>
+                                <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer"
+                                    role="menuitem" href="{{ route('settings') }}"><i class="bi bi-gear"></i> Settings</a>
+                            </li>
                             <li>
                                 <a href="{{ route('logout') }}" method='POST'
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
-                                    role="menuitem">Log out</a>
+                                    role="menuitem"><i class="bi bi-box-arrow-right"></i> Log out</a>
                             </li>
                         </ul>
                     </div>

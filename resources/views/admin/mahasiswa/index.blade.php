@@ -16,6 +16,25 @@
                     <a class="px-2 py-1 bg-blue-700 dark:bg-blue-600 rounded hover:bg-blue-800 dark:hover:bg-blue-700 text-white dark:text-black"
                         href="{{ route('mahasiswa.create') }}"><i class="bi bi-person-add"></i></a>
                 </div>
+                <nav class="flex mb-4" aria-label="Breadcrumb">
+                    <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                        <li class="inline-flex items-center">
+                            <a href="{{ route('dashboard') }}"
+                                class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                                <i class="bi bi-house-door me-2"></i>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                                <i class="bi bi-chevron-right text-gray-400"></i>
+                                <a href="{{ route('mahasiswa.index') }}"
+                                    class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white">Data
+                                    Mahasiswa</a>
+                            </div>
+                        </li>
+                    </ol>
+                </nav>
                 <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700">
                 <form class="max-w-md mx-auto mb-2" action="{{ route('mahasiswa.index') }}" method="GET">
                     <label for="search"
@@ -94,13 +113,13 @@
                                         </div>
                                         <div class="p-6 space-y-6">
                                             <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                                                <strong>NIM:</strong> {{ $mhs->nim }}<br/>
-                                                <strong>Nama:</strong> {{ $mhs->nama }}<br/>
-                                                <strong>Kelas:</strong> {{ $mhs->kelas }}<br/>
-                                                <strong>Jurusan:</strong> {{ $mhs->jurusan }}<br/>
-                                                <strong>Prodi:</strong> {{ $mhs->prodi }}<br/>
-                                                <strong>Waktu Buat:</strong> {{ $mhs->created_at }} <br/>
-                                                <strong>Waktu Update:</strong> {{ $mhs->updated_at }}<br/>
+                                                <strong>NIM:</strong> {{ $mhs->nim }}<br />
+                                                <strong>Nama:</strong> {{ $mhs->nama }}<br />
+                                                <strong>Kelas:</strong> {{ $mhs->kelas }}<br />
+                                                <strong>Jurusan:</strong> {{ $mhs->jurusan }}<br />
+                                                <strong>Prodi:</strong> {{ $mhs->prodi }}<br />
+                                                <strong>Waktu Buat:</strong> {{ $mhs->created_at }} <br />
+                                                <strong>Waktu Update:</strong> {{ $mhs->updated_at }}<br />
                                             </p>
                                         </div>
                                         <div
