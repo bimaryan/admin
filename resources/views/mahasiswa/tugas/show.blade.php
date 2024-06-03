@@ -67,23 +67,11 @@
                                             <a href="{{ Storage::url($submission->file_path) }}"
                                                 target="_blank">{{ $submission->file_path }}</a>
                                         @else
-                                            <pre class="max-h-60 overflow-auto">
-                                                <code class="language-html">
-                                                    {!! nl2br(htmlentities($submission->online_text)) !!}
-                                                </code>
-                                            </pre>
-                                            {{-- <div class="overflow-hidden">
-                                                <pre class="mb-0">
-                                                    <code class="language-html">
-                                                        {!! nl2br(htmlentities($submission->online_text)) !!}
-                                                    </code>
-                                                </pre>
-                                            </div>
-                                            @if (strlen($submission->online_text) > 500)
-                                                <button onclick="toggleFullCode()" id="toggleButton"
-                                                    class="mt-3 mb-3 text-sm text-blue-600 cursor-pointer focus:outline-none">Read
-                                                    more</button>
-                                            @endif --}}
+                                            @if (preg_match('/<[^<]+>/', $submission->online_text))
+                                                <pre><code class="language-html language-js language-css language-php">{!! nl2br(htmlentities($submission->online_text)) !!}</code></pre>
+                                            @else
+                                                {!! nl2br(htmlentities($submission->online_text)) !!}
+                                            @endif
                                         @endif
                                     @else
                                         Submission not available
