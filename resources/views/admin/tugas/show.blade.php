@@ -27,7 +27,8 @@
                     <p class="text-gray-700 dark:text-gray-300">{{ ucfirst($task->submission_type) }}</p>
                 </div>
 
-                <a href="{{ route('admin.tugas.index') }}" class="btn btn-primary">Back to Tasks</a>
+                <a href="{{ route('admin.tugas.index') }}"
+                    class="bg-blue-500 dark:bg-blue-600 px-2 py-1 rounded text-white">Back to Tasks</a>
             </div>
         </div>
     </div>

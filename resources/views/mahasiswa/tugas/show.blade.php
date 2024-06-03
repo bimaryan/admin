@@ -67,7 +67,23 @@
                                             <a href="{{ Storage::url($submission->file_path) }}"
                                                 target="_blank">{{ $submission->file_path }}</a>
                                         @else
-                                            {{ $submission->online_text }}
+                                            <pre class="max-h-60 overflow-auto">
+                                                <code class="language-html">
+                                                    {!! nl2br(htmlentities($submission->online_text)) !!}
+                                                </code>
+                                            </pre>
+                                            {{-- <div class="overflow-hidden">
+                                                <pre class="mb-0">
+                                                    <code class="language-html">
+                                                        {!! nl2br(htmlentities($submission->online_text)) !!}
+                                                    </code>
+                                                </pre>
+                                            </div>
+                                            @if (strlen($submission->online_text) > 500)
+                                                <button onclick="toggleFullCode()" id="toggleButton"
+                                                    class="mt-3 mb-3 text-sm text-blue-600 cursor-pointer focus:outline-none">Read
+                                                    more</button>
+                                            @endif --}}
                                         @endif
                                     @else
                                         Submission not available
@@ -116,3 +132,25 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Prism.highlightAll();
+        });
+
+        function toggleFullCode() {
+            var toggleButton = document.getElementById('toggleButton');
+            var codeElement = document.querySelector('pre code');
+
+            if (codeElement.classList.contains('collapsed')) {
+                codeElement.classList.remove('collapsed');
+                toggleButton.textContent = 'Read less';
+            } else {
+                codeElement.classList.add('collapsed');
+                toggleButton.textContent = 'Read more';
+            }
+        }
+    </script>
+@endpush
