@@ -13,11 +13,6 @@ class TaskSeeder extends Seeder
      */
     public function run(): void
     {
-        Task::create([
-            'title' => 'buatkan codingan html',
-            'description' => 'silahkan kerjakan tugasnya',
-            'due_date' => '2024-06-02 00:00:00',
-            'submission_type' => 'online_text',
-        ]);
+        
     }
 }
